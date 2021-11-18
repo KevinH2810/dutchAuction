@@ -1,0 +1,1 @@
+const Auction = artifact.require("");

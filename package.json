@@ -1,0 +1,22 @@
+{
+  "name": "dutchauction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinH2810/dutchAuction.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinH2810/dutchAuction/issues"
+  },
+  "homepage": "https://github.com/KevinH2810/dutchAuction#readme",
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.3.3"
+  }
+}
