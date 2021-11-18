@@ -1,1 +1,1 @@
-# dutchAuction
+# Dutch Auction
