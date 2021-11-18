@@ -15,3 +15,14 @@ $ npm i
 $ truffle migrate
 ```
 make you run Ganache server on your local before running `truffle migrate`
+
+### Run Test
+to test the contract in overall use the following command :
+```
+$ truffle test
+```
+Or if you want to test specific file use:
+```
+$ truffle test ./path/to/test/file.js
+```
+Reference: [Link](https://trufflesuite.com/docs/truffle/testing/testing-your-contracts)
