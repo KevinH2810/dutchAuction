@@ -7,6 +7,6 @@ module.exports = function (deployer) {
 		1637072812,
 		1637418412,
 		5,
-		"0x5bb6d3f1f8F0A2A6233d4D3d8cE5c4E424885439"
+		"0x06f099e7F1be2d1A494c38c03a5E88a0b79AE5E4"
 	);
 };
