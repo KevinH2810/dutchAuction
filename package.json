@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/KevinH2810/dutchAuction#readme",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.3.3",
     "@openzeppelin/contracts-upgradeable": "^4.3.3"
   }
 }
