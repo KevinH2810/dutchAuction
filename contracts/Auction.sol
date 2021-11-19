@@ -39,6 +39,7 @@ contract Auction{
     }
 
     function bid() external payable {
+        
         require(msg.sender != owner, "owner are unable to bid in the Auction");
         require(block.timestamp > startDate, "Auction hasn't started yet");
         require(block.timestamp < endDate, "Auction is Done");
@@ -73,5 +74,9 @@ contract Auction{
         uint256 deduction = (calculated * startPrice) / 100;
         uint256 currPrice = startPrice - deduction;
         return currPrice;
+    }
+
+    function getOwner() public view returns(address){
+      return owner;
     }
 }

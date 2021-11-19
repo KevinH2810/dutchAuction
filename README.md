@@ -6,23 +6,17 @@ This is a simple Dutch Auction in Smart Contract. in which the assets will start
 
 ## Test Server
 - use [Ganache](link:https://www.trufflesuite.com/ganache) for server deployment. [further Documentation](https://www.trufflesuite.com/docs/truffle/reference/choosing-an-ethereum-client)
-- refer to [Truffle](https://www.trufflesuite.com/docs/truffle/quickstart) for more Documentation
+- refer to [Hardhat](https://hardhat.org/tutorial/) for more Documentation
 
 ## Command Line
 ```
 $ git clone 
 $ npm i
-$ truffle migrate
 ```
-make you run Ganache server on your local before running `truffle migrate`
 
 ### Run Test
 to test the contract in overall use the following command :
 ```
-$ truffle test
+$ npx hardhat test
 ```
 Or if you want to test specific file use:
-```
-$ truffle test ./path/to/test/file.js
-```
-Reference: [Link](https://trufflesuite.com/docs/truffle/testing/testing-your-contracts)

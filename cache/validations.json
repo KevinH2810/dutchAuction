@@ -1,0 +1,2014 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:6",
+        "version": {
+          "withMetadata": "fabf437afdafa60edd85e62e9f2ce7f1c487a832f1267b95221891946d914fbc",
+          "withoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa",
+          "linkedWithoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:7"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)978",
+              "src": "contracts/Auction.sol:15"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)978": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:7",
+        "version": {
+          "withMetadata": "8d75d77d8dd265e53b7e64e9483ef3c513555fbc766f9a62aebaa25ac9f0721b",
+          "withoutMetadata": "4330599fd4609d3f27812e306aa4c431383ec0b95709b5c1e0d41b797fd7c9b9",
+          "linkedWithoutMetadata": "4330599fd4609d3f27812e306aa4c431383ec0b95709b5c1e0d41b797fd7c9b9"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:21"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:15"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)994",
+              "src": "contracts/Auction.sol:16"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)994": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "d14b8bbf0223116972bca4244343d16deca2d5e1d16d3bcf0dfbce7d90e61f47",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:6",
+        "version": {
+          "withMetadata": "5a34ef3049762238820007a00bdda2978fa5a0a9ccca5b71b42c03327b89d660",
+          "withoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa",
+          "linkedWithoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:7"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)978",
+              "src": "contracts/Auction.sol:15"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)978": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:6",
+        "version": {
+          "withMetadata": "226cdd8cd1be037ce61559438d8e8e9392f35e4b93faaf006ebfbb98661cbc02",
+          "withoutMetadata": "fe4c088cb1b65f8b3dabb94c83d26fa5d81a2d75a1d475e1e54f1d853ab0c0a9",
+          "linkedWithoutMetadata": "fe4c088cb1b65f8b3dabb94c83d26fa5d81a2d75a1d475e1e54f1d853ab0c0a9"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:21"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:7"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)986",
+              "src": "contracts/Auction.sol:15"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)986": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:6",
+        "version": {
+          "withMetadata": "22003e7fa77c4c1191e65b67005c74f9e259b37cd462023640b144687b2bc84d",
+          "withoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa",
+          "linkedWithoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:7"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)978",
+              "src": "contracts/Auction.sol:15"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)978": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:6",
+        "version": {
+          "withMetadata": "4cb89efde88bcbc474ff6b00a5f1d6e8b3f1818752246097fbfef64bda4207b5",
+          "withoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa",
+          "linkedWithoutMetadata": "2c5322fb233441ceae100af4b0f3eda6ece417956751f5bcc646de41f33c69fa"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:7"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)978",
+              "src": "contracts/Auction.sol:15"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)978": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:34",
+        "version": {
+          "withMetadata": "2b17b8c436faca5978450bac44189eed7cc5397def201a6d3706ea44361ee36d",
+          "withoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78",
+          "linkedWithoutMetadata": "b924a240666455f37cce7c566fd462ba56daaed4d4baee92e754e74ea7a70c78"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:53"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:35"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:37"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:42"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_string_storage": {
+              "label": "string"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:12",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Auction": {
+        "src": "contracts/Auction.sol:6",
+        "version": {
+          "withMetadata": "297c5b438abafbcfe19c4f7b8a147cc969acd09a337d4dd77a6229d71cfc1ea6",
+          "withoutMetadata": "3ec05a2f0f586c63bd856c65493a5cc6dd2ec008797566b87116093554f7bbed",
+          "linkedWithoutMetadata": "3ec05a2f0f586c63bd856c65493a5cc6dd2ec008797566b87116093554f7bbed"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,uint256,address)",
+          "bid()",
+          "currentPrice()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Auction",
+            "src": "contracts/Auction.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Auction",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:7"
+            },
+            {
+              "contract": "Auction",
+              "label": "buyer",
+              "type": "t_address_payable",
+              "src": "contracts/Auction.sol:8"
+            },
+            {
+              "contract": "Auction",
+              "label": "tokenAddr",
+              "type": "t_address",
+              "src": "contracts/Auction.sol:9"
+            },
+            {
+              "contract": "Auction",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:10"
+            },
+            {
+              "contract": "Auction",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:11"
+            },
+            {
+              "contract": "Auction",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:12"
+            },
+            {
+              "contract": "Auction",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:13"
+            },
+            {
+              "contract": "Auction",
+              "label": "auctionedAmount",
+              "type": "t_uint256",
+              "src": "contracts/Auction.sol:14"
+            },
+            {
+              "contract": "Auction",
+              "label": "token",
+              "type": "t_contract(Token)1211",
+              "src": "contracts/Auction.sol:15"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_contract(Token)1211": {
+              "label": "contract Token"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "AuctionNFT": {
+        "src": "contracts/AuctionNFT.sol:12",
+        "version": {
+          "withMetadata": "5033174f3f1f726054376f9aae56259af4d21938ae8cb78dc93963d7880ff0f3",
+          "withoutMetadata": "a81ddebc1fe4114331494167483dbb06f6989b256cb1194cfcd5e091017e6151",
+          "linkedWithoutMetadata": "a81ddebc1fe4114331494167483dbb06f6989b256cb1194cfcd5e091017e6151"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256,uint256,uint256,address,uint256)",
+          "bid()",
+          "currentPrice()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "AuctionNFT",
+            "src": "contracts/AuctionNFT.sol:28"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "nft",
+            "src": "contracts/AuctionNFT.sol:20"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "nftId",
+            "src": "contracts/AuctionNFT.sol:21"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "AuctionNFT",
+              "label": "owner",
+              "type": "t_address_payable",
+              "src": "contracts/AuctionNFT.sol:13"
+            },
+            {
+              "contract": "AuctionNFT",
+              "label": "buyer",
+              "type": "t_address",
+              "src": "contracts/AuctionNFT.sol:14"
+            },
+            {
+              "contract": "AuctionNFT",
+              "label": "startPrice",
+              "type": "t_uint256",
+              "src": "contracts/AuctionNFT.sol:15"
+            },
+            {
+              "contract": "AuctionNFT",
+              "label": "startDate",
+              "type": "t_uint256",
+              "src": "contracts/AuctionNFT.sol:16"
+            },
+            {
+              "contract": "AuctionNFT",
+              "label": "endDate",
+              "type": "t_uint256",
+              "src": "contracts/AuctionNFT.sol:17"
+            },
+            {
+              "contract": "AuctionNFT",
+              "label": "currentTime",
+              "type": "t_uint256",
+              "src": "contracts/AuctionNFT.sol:18"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC721": {
+        "src": "contracts/AuctionNFT.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transfer(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Token": {
+        "src": "contracts/Token.sol:5",
+        "version": {
+          "withMetadata": "56c4b421bfa9d0551e96eccb35dd9260a154bb456d46b9cc16e8ea4d996d970a",
+          "withoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8",
+          "linkedWithoutMetadata": "ddc9c63644079298788e6ad37a3f86365dc7d98d4bd5043596fa379cebadffb8"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Token",
+            "src": "contracts/Token.sol:6"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    }
+  ]
+}
