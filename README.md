@@ -5,16 +5,22 @@ This is a simple Dutch Auction in Smart Contract. in which the assets will start
 
 
 ## Test Server
-- use [Ganache](link:https://www.trufflesuite.com/ganache) for server deployment. [further Documentation](https://www.trufflesuite.com/docs/truffle/reference/choosing-an-ethereum-client)
 - refer to [Hardhat](https://hardhat.org/tutorial/) for more Documentation
 
 ## Command Line
 ```
-$ git clone 
+$ git clone git@github.com:KevinH2810/dutchAuction-smartContract.git
+
 $ npm i
 ```
 
 ### Run Test
+
+before we continue to testing, make sure you have installed hardhat on your local, 
+refer to: [hardhat](https://hardhat.org/getting-started/)
+
+after installing hardhat, make sure you also have install the prequisite libs.
+
 to test the contract in overall use the following command :
 ```
 $ npx hardhat test
