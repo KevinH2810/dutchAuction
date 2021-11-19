@@ -26,7 +26,7 @@ describe("Auction", () => {
 			});
 	});
 
-	it.only("Auction - test Bid function Success", async () => {
+	it("Auction - test Bid function Success", async () => {
 		const accounts = await hre.ethers.getSigners();
 		const Token = await ethers.getContractFactory("Token");
 		const Auction = await ethers.getContractFactory("Auction");
@@ -158,7 +158,23 @@ describe("Auction", () => {
 		);
 	});
 
-	it("check account balance", async () => {
+	it("Auction - test reserve Price - Success", async () => {
 		const accounts = await hre.ethers.getSigners();
+		const Token = await ethers.getContractFactory("Token");
+		const Auction = await ethers.getContractFactory("Auction");
+
+		token = await Token.deploy();
+		auction = await Auction.deploy(
+			45,
+			Math.floor(Date.now() / 1000 - 259200),
+			Math.floor(Date.now() / 1000 + 86400),
+			6,
+			token.address
+		);
+
+		await auction.setReservePrice(30);
+
+		const currentPriceAfter = await auction.currentPrice.call();
+		expect(currentPriceAfter).to.equal(30);
 	});
 });

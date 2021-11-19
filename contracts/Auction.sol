@@ -4,7 +4,7 @@ pragma solidity >=0.5.0;
 import "./Token.sol";
 import "hardhat/console.sol";
 
-contract Auction{
+contract Auction {
     address payable public owner;
     address payable public buyer;
     address tokenAddr;
@@ -13,6 +13,7 @@ contract Auction{
     uint256 public endDate;
     uint256 public currentTime;
     uint256 public auctionedAmount;
+    uint256 public reservePrice;
     Token public token;
 
     //we auction 1 token per auction by default
@@ -37,10 +38,14 @@ contract Auction{
         currentTime = block.timestamp;
         //How many TKN that is auctioned
         auctionedAmount = tokenAmount_;
+        reservePrice = 0;
     }
 
     function bid() external payable {
-        require(msg.sender != owner, "owner are now allowed to participate in the Auction");
+        require(
+            msg.sender != owner,
+            "owner are now allowed to participate in the Auction"
+        );
         require(block.timestamp > startDate, "Auction hasn't started yet");
         require(block.timestamp < endDate, "Auction is Done");
         require(buyer == address(0), "Auction item has been bought");
@@ -60,8 +65,6 @@ contract Auction{
         );
 
         buyer = payable(msg.sender);
-        // buyer.transfer(amount);
-        // buyer.call({value:amount}).gas(2500);
         (bool sent, bytes memory data) = owner.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
 
@@ -69,16 +72,23 @@ contract Auction{
         emit Bid(buyer, msg.value);
     }
 
-    function currentPrice() public payable returns (uint256) {
+    function currentPrice() public view returns (uint256) {
         require(block.timestamp > startDate, "Auction hasn't started yet");
         uint256 elapse = block.timestamp - startDate;
         uint256 calculated = (elapse * 100) / (endDate - startDate);
         uint256 deduction = (calculated * startPrice) / 100;
         uint256 currPrice = startPrice - deduction;
+        if (currPrice < reservePrice) {
+            currPrice = reservePrice;
+        }
         return currPrice;
     }
 
-    function getOwner() public view returns(address){
-      return owner;
+    function getOwner() public view returns (address) {
+        return owner;
+    }
+
+    function setReservePrice(uint256 priceSet) public {
+        reservePrice = priceSet;
     }
 }
