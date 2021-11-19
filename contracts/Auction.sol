@@ -39,35 +39,34 @@ contract Auction{
         auctionedAmount = tokenAmount_;
     }
 
-    function bid(address buy, uint amount) external payable {
-        require(buy != owner, "owner are unable to bid in the Auction");
+    function bid() external payable {
+        require(msg.sender != owner, "owner are now allowed to participate in the Auction");
         require(block.timestamp > startDate, "Auction hasn't started yet");
         require(block.timestamp < endDate, "Auction is Done");
         require(buyer == address(0), "Auction item has been bought");
-        require(amount < 1e35);
+        require(msg.value < 1e35);
         require(
-            address(buy).balance > amount,
+            address(msg.sender).balance > msg.value,
             "Not enough balance to bid"
         );
 
         uint256 price = currentPrice();
 
-        require(amount >= price, "amount is lower than price");
+        require(msg.value >= price, "amount bid is lower than price");
         //to prevent owner from setup an auction and using the auctioned token amount for other transaction
         require(
             token.balanceOf(owner) > auctionedAmount,
             "not enough token to be auctioned"
         );
 
-        buyer = payable(buy);
+        buyer = payable(msg.sender);
         // buyer.transfer(amount);
         // buyer.call({value:amount}).gas(2500);
-        //send ETh from buyer to owner of the token assets
-        (bool sent, ) = owner.call{value: amount}("");
-        require(!sent, "ETH is not sent");
+        (bool sent, bytes memory data) = owner.call{value: msg.value}("");
+        require(sent, "Failed to send Ether");
 
         token.transferFrom(owner, buyer, auctionedAmount);
-        emit Bid(buyer, amount);
+        emit Bid(buyer, msg.value);
     }
 
     function currentPrice() public payable returns (uint256) {
