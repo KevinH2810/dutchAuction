@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { assert } = require("console");
 const { BigNumber } = require("ethers");
 
-describe("Auction", (accounts) => {
+describe("Auction", () => {
 	let token;
 	let auction;
 
@@ -26,7 +26,7 @@ describe("Auction", (accounts) => {
 			});
 	});
 
-	it("Auction - test Bid function Success", async () => {
+	it.only("Auction - test Bid function Success", async () => {
 		const accounts = await hre.ethers.getSigners();
 		const Token = await ethers.getContractFactory("Token");
 		const Auction = await ethers.getContractFactory("Auction");
@@ -50,15 +50,29 @@ describe("Auction", (accounts) => {
 		await token.allowance(accounts[0].address, auction.address);
 		//bid the item
 		auction = Auction.attach(auction.address);
+
+		let initBalance1 = await accounts[1].getBalance();
+		console.log("balance before = ", initBalance1.toString());
+
+		let initBalance0 = await accounts[0].getBalance();
+		console.log("balance owner before = ", initBalance0.toString());
+
 		const res = await auction
-			.connect(accounts[0])
-			.bid(accounts[1].address, ethers.utils.parseUnits("50", "wei"));
+			.connect(accounts[1])
+			.bid({ value: ethers.utils.parseUnits("50", "wei") });
+
+		let afterBalance1 = await accounts[1].getBalance();
+		console.log("balance after = ", afterBalance1.toString());
+
+		let afterBalance0 = await accounts[0].getBalance();
+		console.log("balance owner after = ", afterBalance0.toString());
 
 		const balance1 = await token.balanceOf(accounts[1].address);
 		const balance0 = await token.balanceOf(accounts[0].address);
 
 		expect(balance1.toNumber()).to.equal(6);
 		expect(balance0.toNumber()).to.equal(94);
+		expect(afterBalance0.toString()).to.equal(initBalance0.add(50).toString());
 	});
 
 	it("Auction - test Bid function - Fail - Bid price is lower than current price", async () => {
@@ -142,5 +156,9 @@ describe("Auction", (accounts) => {
 		).to.be.revertedWith(
 			"'owner are now allowed to participate in the Auction"
 		);
+	});
+
+	it("check account balance", async () => {
+		const accounts = await hre.ethers.getSigners();
 	});
 });
