@@ -41,12 +41,10 @@ describe("Auction", (accounts) => {
 		);
 		let x = await auction.owner();
 		let amount = await auction.auctionedAmount();
-		console.log("owner = ", x);
-		console.log("amount = ", amount.toNumber());
 
 		token = Token.attach(token.address);
 		//set the allowance
-		await token.approve(auction.address, ethers.utils.parseUnits("20", "wei"), {
+		await token.approve(auction.address, ethers.utils.parseUnits("10", "wei"), {
 			from: accounts[0].address,
 		});
 
@@ -55,25 +53,16 @@ describe("Auction", (accounts) => {
 			accounts[0].address,
 			auction.address
 		);
-		console.log("allowance = ", contractAllowance.toNumber());
-
 		//bid the item
-		auction = Auction.attach(accounts[1].address);
-		const res = await auction.bid({
-			value: ethers.utils.parseUnits("21", "wei"),
-		});
-
-		const result = await res.wait();
-
-		console.log("res = ", res);
-		console.log("result = ", result);
+		const res = await auction.bid(
+			accounts[1].address,
+			ethers.utils.parseUnits("50", "wei")
+		);
 
 		const balance1 = await token.balanceOf(accounts[1].address);
 		const balance0 = await token.balanceOf(accounts[0].address);
 
-		console.log("accounts 1 token ", balance1.toNumber());
-		console.log("accounts 0 token ", balance0.toNumber());
-
-		expect(balance1.toNumber()).to.equal(21);
+		expect(balance1.toNumber()).to.equal(6);
+		expect(balance0.toNumber()).to.equal(94);
 	});
 });

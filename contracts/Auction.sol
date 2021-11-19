@@ -2,6 +2,7 @@
 pragma solidity >=0.5.0;
 
 import "./Token.sol";
+import "hardhat/console.sol";
 
 contract Auction{
     address payable public owner;
@@ -38,33 +39,35 @@ contract Auction{
         auctionedAmount = tokenAmount_;
     }
 
-    function bid() external payable {
-        
-        require(msg.sender != owner, "owner are unable to bid in the Auction");
+    function bid(address buy, uint amount) external payable {
+        require(buy != owner, "owner are unable to bid in the Auction");
         require(block.timestamp > startDate, "Auction hasn't started yet");
         require(block.timestamp < endDate, "Auction is Done");
         require(buyer == address(0), "Auction item has been bought");
-        require(msg.value < 1e35);
+        require(amount < 1e35);
         require(
-            address(msg.sender).balance > msg.value,
+            address(buy).balance > amount,
             "Not enough balance to bid"
         );
 
         uint256 price = currentPrice();
 
-        require(msg.value >= price, "amount is lower than price");
+        require(amount >= price, "amount is lower than price");
         //to prevent owner from setup an auction and using the auctioned token amount for other transaction
         require(
             token.balanceOf(owner) > auctionedAmount,
             "not enough token to be auctioned"
         );
 
-        buyer = payable(msg.sender);
-        (bool sent, ) = owner.call{value: msg.value}("");
-        require(sent, "fail to send ETH payment to owner");
-        token.transferFrom(owner, buyer, auctionedAmount);
+        buyer = payable(buy);
+        // buyer.transfer(amount);
+        // buyer.call({value:amount}).gas(2500);
+        //send ETh from buyer to owner of the token assets
+        (bool sent, ) = owner.call{value: amount}("");
+        require(!sent, "ETH is not sent");
 
-        emit Bid(buyer, msg.value);
+        token.transferFrom(owner, buyer, auctionedAmount);
+        emit Bid(buyer, amount);
     }
 
     function currentPrice() public payable returns (uint256) {
